@@ -1,0 +1,13 @@
+<div>
+  <button (click)="openDialog()">Open Dialog</button>
+  <p>Счётчик нажатия: {{ countClick }}</p>
+  <div *ngIf="dataDialog">
+    <h1>Полученные данные</h1>
+    <div *ngFor="let data of dataDialog">
+      <div *ngFor="let prop of data | keyvalue" >
+        <p>{{prop.key}}:{{prop.value}}</p>
+      </div>
+    </div>
+  </div>
+</div>
+

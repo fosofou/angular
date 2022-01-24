@@ -1,0 +1,17 @@
+<div mat-dialog-title class="flex">
+  <h2 mat-dialog-title>Диалог</h2>
+  <button (click)="close()">Закрыть</button>
+</div>
+<mat-dialog-actions>
+  <button (click)="getData()">Получить JSON</button>
+  <p>Счётчик нажатия: {{ countClick }}</p>
+</mat-dialog-actions>
+<mat-dialog-content>
+<div *ngIf="dataDialog">
+  <div *ngFor="let data of dataDialog">
+    <div *ngFor="let prop of data | keyvalue" >
+      <p>{{prop.key}}:{{prop.value}}</p>
+    </div>
+  </div>
+</div>
+</mat-dialog-content>
